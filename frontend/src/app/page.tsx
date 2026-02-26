@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
 // ─── Types ───────────────────────────────────────────────────────────────────
 interface ProvenanceDoc {
   id: string;
@@ -134,30 +136,31 @@ function ConfidenceGauge({ level, score, breakdown }: { level: string; score?: n
 function OrbitalLoader() {
   return (
     <div className="flex flex-col items-center justify-center gap-6">
-      <div className="relative w-32 h-32">
+      <div className="relative w-40 h-40">
         {/* Outer ring */}
-        <div className="absolute inset-0 rounded-full border border-dashed border-indigo-500/30 animate-[spin_8s_linear_infinite]" />
+        <div className="absolute inset-0 rounded-full border-2 border-dashed border-indigo-400/40 animate-[spin_8s_linear_infinite]" />
         {/* Middle ring */}
-        <div className="absolute inset-4 rounded-full border border-indigo-500/20 animate-[spin_5s_linear_infinite_reverse]" />
+        <div className="absolute inset-4 rounded-full border-2 border-indigo-500/30 animate-[spin_5s_linear_infinite_reverse]" />
         {/* Inner glow */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-10 h-10 rounded-full bg-indigo-600/40 blur-lg animate-pulse" />
-          <div className="absolute w-4 h-4 rounded-full bg-indigo-500 shadow-lg shadow-indigo-500/50" />
+          <div className="w-16 h-16 rounded-full bg-indigo-500/30 blur-xl animate-pulse" />
+          <div className="absolute w-5 h-5 rounded-full bg-indigo-400 shadow-lg shadow-indigo-400/60" />
         </div>
-        {/* Orbiting dots */}
+        {/* Orbiting dot 1 — glows and dims */}
         <div className="absolute inset-0 animate-[spin_3s_linear_infinite]">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-indigo-400 shadow-md shadow-indigo-400/50" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-indigo-300 animate-pulse" style={{ boxShadow: "0 0 10px 3px rgba(129,140,248,0.6), 0 0 20px 6px rgba(129,140,248,0.3)" }} />
         </div>
+        {/* Orbiting dot 2 — glows and dims */}
         <div className="absolute inset-2 animate-[spin_4s_linear_infinite_reverse]">
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-purple-400 shadow-md shadow-purple-400/50" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-purple-300 animate-pulse" style={{ boxShadow: "0 0 10px 3px rgba(192,132,252,0.6), 0 0 20px 6px rgba(192,132,252,0.3)", animationDelay: "500ms" }} />
         </div>
       </div>
-      <div className="text-center space-y-2">
-        <p className="text-white/50 text-base">Retrieving documents &amp; analyzing for conflicts...</p>
-        <div className="flex items-center justify-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "0ms" }} />
-          <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "150ms" }} />
-          <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "300ms" }} />
+      <div className="text-center space-y-3">
+        <p className="text-white/70 text-base font-medium">Retrieving documents &amp; analyzing for conflicts...</p>
+        <div className="flex items-center justify-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "0ms" }} />
+          <span className="w-2 h-2 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "150ms" }} />
+          <span className="w-2 h-2 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "300ms" }} />
         </div>
       </div>
     </div>
@@ -203,7 +206,7 @@ export default function Home() {
     setShowFadeIn(false);
 
     try {
-      const res = await fetch("http://localhost:8000/api/query", {
+      const res = await fetch(`${API_URL}/api/query`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: question }),
@@ -228,7 +231,7 @@ export default function Home() {
       .map(c => ({ id: c.id, score: c.score, content: c.content, metadata: c.metadata }));
 
     try {
-      const res = await fetch("http://localhost:8000/api/explain-chunks", {
+      const res = await fetch(`${API_URL}/api/explain-chunks`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: activeQuery, chunks: topChunks }),
@@ -254,7 +257,7 @@ export default function Home() {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await fetch("http://localhost:8000/api/upload-file", { method: "POST", body: formData });
+      const res = await fetch(`${API_URL}/api/upload-file`, { method: "POST", body: formData });
       const data = await res.json();
       if (data.status === "success") showToast(`✅ ${data.message}`, "success");
       else showToast(`❌ ${data.message}`, "error");
@@ -267,7 +270,7 @@ export default function Home() {
     setSettingsLoading("recreate");
     setSettingsOpen(false);
     try {
-      const res = await fetch("http://localhost:8000/api/recreate-embeddings", { method: "POST" });
+      const res = await fetch(`${API_URL}/api/recreate-embeddings`, { method: "POST" });
       const data = await res.json();
       if (data.status === "success") showToast(`✅ ${data.message}`, "success");
       else showToast(`❌ ${data.message}`, "error");
@@ -280,7 +283,7 @@ export default function Home() {
     setSettingsLoading("delete");
     setSettingsOpen(false);
     try {
-      const res = await fetch("http://localhost:8000/api/delete-embeddings", { method: "DELETE" });
+      const res = await fetch(`${API_URL}/api/delete-embeddings`, { method: "DELETE" });
       const data = await res.json();
       if (data.status === "success") showToast(`✅ ${data.message}`, "success");
       else showToast(`❌ ${data.message}`, "error");
@@ -573,7 +576,9 @@ export default function Home() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {sortedProvenance.map((doc, i) => {
-                      const dept = doc.metadata.department || "Unknown";
+                      const fname = doc.metadata.filename || doc.id || "";
+                      const nameParts = fname.replace(/\.(pdf|txt|md)$/i, "").split("_").filter(p => isNaN(Number(p)));
+                      const dept = doc.metadata.department || nameParts[0] || "Unknown";
                       const deptStyle = getDeptStyle(dept);
                       const matchPct = (doc.score * 100).toFixed(1);
                       return (
@@ -685,7 +690,9 @@ export default function Home() {
                 {(() => {
                   const deptCounts: Record<string, number> = {};
                   response.provenance?.forEach(d => {
-                    const dept = d.metadata.department || "Unknown";
+                    const fname = d.metadata.filename || d.id || "";
+                    const nameParts = fname.replace(/\.(pdf|txt|md)$/i, "").split("_").filter((p: string) => isNaN(Number(p)));
+                    const dept = d.metadata.department || nameParts[0] || "Unknown";
                     deptCounts[dept] = (deptCounts[dept] || 0) + 1;
                   });
                   const deptEntries = Object.entries(deptCounts).sort((a, b) => b[1] - a[1]);
@@ -866,8 +873,8 @@ export default function Home() {
       {/* ── Toast Notification ────────────────────────────────────────── */}
       {settingsToast && (
         <div className={`fixed bottom-24 right-6 z-[80] px-4 py-3 rounded-xl border shadow-2xl backdrop-blur-xl flex items-center gap-2.5 animate-in slide-in-from-right-5 duration-300 ${settingsToast.type === "success"
-            ? "bg-emerald-500/15 border-emerald-500/30 text-emerald-300"
-            : "bg-rose-500/15 border-rose-500/30 text-rose-300"
+          ? "bg-emerald-500/15 border-emerald-500/30 text-emerald-300"
+          : "bg-rose-500/15 border-rose-500/30 text-rose-300"
           }`}>
           <p className="text-sm font-medium max-w-xs">{settingsToast.msg}</p>
           <button onClick={() => setSettingsToast(null)} className="text-white/40 hover:text-white/70 transition-colors ml-2">✕</button>

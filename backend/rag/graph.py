@@ -37,7 +37,7 @@ def compute_confidence_breakdown(docs, llm_confidence):
       - source_diversity     : 15%  (unique departments / total docs)
       - score_spread         : 15%  (1 - normalized gap between top-1 and top-5)
     """
-    scores = [d["score"] for d in docs] if docs else [0]
+    scores = [d.get("vector_score", d["score"]) for d in docs] if docs else [0]
     
     # 1. Retrieval Similarity (0-100): avg of cosine sim scores
     avg_sim = sum(scores) / len(scores)
@@ -165,5 +165,11 @@ app_graph = workflow.compile()
 async def get_answer(query: str):
     final_state = app_graph.invoke({"query": query})
     result = final_state["answer_json"]
-    result["provenance"] = final_state["documents"]
+    # Use vector_score (cosine similarity) for display, not RRF fusion score
+    provenance = []
+    for doc in final_state["documents"]:
+        d = dict(doc)
+        d["score"] = d.get("vector_score", d["score"])  # cosine sim for display
+        provenance.append(d)
+    result["provenance"] = provenance
     return result
