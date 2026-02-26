@@ -1,0 +1,42 @@
+Metadata: {"department": "ICU", "date": "2026-03-05", "source_type": "alert", "author": "Charge Nurse Patricia Kelly"}
+
+URGENT PATIENT SAFETY ALERT — ICU INFECTION OUTBREAK
+Classification: CRITICAL
+Date: 2026-03-05
+Author: Charge Nurse Patricia Kelly, MSN, RN-BC
+
+ALERT SUMMARY:
+The Intensive Care Unit is reporting a significant and alarming spike in hospital-acquired infections (HAIs) during Q1 2026. The overall HAI rate in the ICU has reached 4.5% this quarter, representing a 180% increase from Q4 2025 (1.6%) and far exceeding the national ICU benchmark of 2.1%.
+
+INFECTION BREAKDOWN:
+1. Central Line-Associated Bloodstream Infections (CLABSI): 12 cases (rate: 3.2 per 1,000 catheter days, national benchmark: 0.8)
+2. Catheter-Associated Urinary Tract Infections (CAUTI): 8 cases (rate: 2.1 per 1,000 catheter days, national benchmark: 0.9)
+3. Ventilator-Associated Pneumonia (VAP): 6 cases (rate: 1.8 per 1,000 ventilator days, national benchmark: 0.9)
+4. Surgical Site Infections (transferred surgical patients): 4 cases
+5. C. difficile infections: 3 cases
+
+ROOT CAUSE ANALYSIS — PRELIMINARY FINDINGS:
+
+Factor 1: STERILIZATION EQUIPMENT FAILURE
+The UV-C sterilization unit assigned to the ICU (Unit #3) has been malfunctioning intermittently since January 22, 2026. Maintenance logs show it was flagged for repair on January 28, but the work order was not completed until February 15 — a gap of 18 days during which the ICU relied solely on manual cleaning protocols.
+
+Factor 2: STAFFING-DRIVEN PROTOCOL LAPSES
+Due to chronic understaffing during night shifts, hand hygiene compliance in the ICU dropped to 64% (monitored by electronic badges), compared to 92% during day shifts. Central line bundle compliance also fell to 71% during nights, versus 95% during days.
+
+Factor 3: PATIENT ACUITY
+Average patient acuity scores increased by 18% this quarter, with a higher proportion of immunocompromised patients (oncology referrals increased 40%). Higher acuity patients are inherently more susceptible to HAIs.
+
+IMMEDIATE ACTIONS TAKEN:
+- UV-C Unit #3 replaced with a backup unit on February 16
+- Mandatory hand hygiene re-training completed for all ICU staff (February 20-22)
+- Temporary 1:1 nursing ratio implemented for all central line patients
+- Environmental cultures obtained from all ICU surfaces and equipment
+
+PATIENT OUTCOMES:
+Of the 33 HAI cases: 2 patients died (both with multiple comorbidities), 7 required extended ICU stays averaging 8.4 additional days, and estimated additional treatment costs total approximately $412,000.
+
+FORMAL REQUEST:
+This alert constitutes a formal request for an immediate hospital-wide infection control audit and additional ICU nursing FTEs.
+
+Signed: Patricia Kelly, MSN, RN-BC
+ICU Charge Nurse & Infection Prevention Liaison

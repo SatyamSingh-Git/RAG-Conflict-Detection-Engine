@@ -1,0 +1,28 @@
+Metadata: {"department": "Emergency", "date": "2026-04-02", "source_type": "log", "author": "Dr. James Rivera"}
+
+EMERGENCY DEPARTMENT — Q1 2026 INCIDENT LOG SUMMARY
+Compiled by: Dr. James Rivera, ED Medical Director
+Date: 2026-04-02
+
+CRITICAL FINDINGS:
+
+1. PATIENT VOLUME & WAIT TIMES
+The Emergency Department experienced a 30% surge in patient volume during Q1 2026, with an average of 287 patients per day (up from 221 in Q4 2025). Average wait times increased from 42 minutes to 87 minutes, with peak wait times exceeding 3 hours on 14 occasions during the quarter. This represents a DANGEROUS deterioration in our ability to provide timely emergency care.
+
+2. COMPLAINT STATISTICS
+Emergency department complaints rose by 25% in Q1 2026, reaching 178 formal complaints (up from 142 in Q4 2025). The most critical complaint categories were: excessive wait times (72 complaints), perceived staff indifference (38 complaints), inadequate pain management (29 complaints), and lack of communication during wait periods (21 complaints). 23 complaints specifically mentioned patients leaving against medical advice or leaving without being seen (LWBS).
+
+3. LWBS RATE
+The Left Without Being Seen (LWBS) rate reached 8.7% in March 2026, far exceeding the national benchmark of 2%. Over the quarter, 247 patients left the Emergency Department without receiving medical evaluation. Three of these patients returned within 24 hours requiring immediate admission, including one patient who suffered a cardiac event at home.
+
+4. STAFFING OBSERVATIONS
+Despite HR reports indicating full staffing, the ED regularly operated with only 60-70% of required nursing coverage during night shifts and weekends. Agency nurse utilization was 340 hours in March alone, contradicting claims that agency nurses were unnecessary. Staff burnout indicators are elevated, with 6 ED nurses requesting transfers to other departments.
+
+5. PATIENT SAFETY CONCERNS
+Two sentinel events occurred during Q1: (a) a patient with chest pain waited 2.5 hours before triage re-evaluation, and (b) a pediatric patient with a femur fracture was left in the waiting room for 90 minutes without pain management. Both cases are under formal review.
+
+6. RECOMMENDATIONS
+Immediate increase in ED staffing levels by a minimum of 4 RNs per shift. Implementation of a rapid triage protocol for high-acuity patients. Installation of a real-time wait time display system. Formal review of the discrepancy between HR staffing reports and actual ED coverage.
+
+SIGNED: Dr. James Rivera, MD, FACEP
+Emergency Department Medical Director

@@ -1,0 +1,76 @@
+{
+    "name": "Envint Document Ingestion",
+    "nodes": [
+        {
+            "parameters": {
+                "path": "E:/Envint/data",
+                "events": [
+                    "add"
+                ],
+                "options": {}
+            },
+            "id": "1",
+            "name": "Local File Trigger",
+            "type": "n8n-nodes-base.localFileTrigger",
+            "typeVersion": 1,
+            "position": [
+                250,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "command": "=\"cd E:/Envint/backend && .\\\\venv\\\\Scripts\\\\python scripts\\\\ingest.py\""
+            },
+            "id": "2",
+            "name": "Execute Ingestion Script",
+            "type": "n8n-nodes-base.executeCommand",
+            "typeVersion": 1,
+            "position": [
+                450,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "text": "=\"Document \" + $json[\"path\"] + \" successfully ingested and embedded into Pinecone!\""
+            },
+            "id": "3",
+            "name": "Send Slack/Email Notification Dummy",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 1,
+            "position": [
+                650,
+                300
+            ]
+        }
+    ],
+    "pinData": {},
+    "connections": {
+        "Local File Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Execute Ingestion Script",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Execute Ingestion Script": {
+            "main": [
+                [
+                    {
+                        "node": "Send Slack/Email Notification Dummy",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "active": false,
+    "settings": {},
+    "versionId": "1"
+}

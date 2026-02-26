@@ -1,0 +1,26 @@
+Metadata: {"department": "Security", "date": "2026-03-31", "source_type": "log", "author": "Chief Derek Morgan"}
+
+HOSPITAL SECURITY — Q1 2026 INCIDENT SUMMARY
+Compiled by: Chief Derek Morgan, Director of Hospital Security
+Date: 2026-03-31
+
+TOTAL INCIDENTS: 89 (Q4 2025: 102, representing a 13% reduction)
+
+INCIDENT CATEGORIES:
+1. Workplace Violence: 12 incidents (8 patient-on-staff, 4 visitor-related)
+2. Elopement Attempts: 7 (all patients returned safely, 3 behavioral health)
+3. Theft: 15 (9 personal property, 4 equipment, 2 medication diversion — referred to pharmacy)
+4. Trespassing: 8 (unauthorized visitors after hours, no security breaches to restricted areas)
+5. Behavioral Disturbances: 23 (primarily in Emergency Department during peak wait times)
+6. Motor Vehicle Incidents: 6 (parking structure, no injuries)
+7. Fire Alarm Activations: 4 (all false alarms, 2 attributed to construction dust)
+8. Other: 14 (lost and found, escort requests, welfare checks)
+
+NOTABLE IMPROVEMENT:
+The new visitor management system (implemented January 2026) has reduced unauthorized access incidents by 62%. All visitors now receive photo ID badges that expire at the end of their visit. The system has also aided law enforcement in one active investigation.
+
+NEW BODY-WORN CAMERA PROGRAM:
+Body-worn cameras were deployed to all security officers on February 1. In the first two months, footage was requested for 6 incident investigations and proved instrumental in resolving 4 of them, including 2 workplace violence complaints.
+
+Prepared by: Chief Derek Morgan
+Director of Hospital Security

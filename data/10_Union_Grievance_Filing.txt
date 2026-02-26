@@ -1,0 +1,36 @@
+Metadata: {"department": "Labor Relations", "date": "2026-03-25", "source_type": "grievance", "author": "Marcus Johnson"}
+
+NURSES UNION LOCAL 1199 — FORMAL GRIEVANCE
+Grievance Number: 2026-GR-0442
+Date Filed: March 25, 2026
+Filed By: Marcus Johnson, Union Representative
+
+SUBJECT: Excessive Mandatory Overtime, Unsafe Working Conditions, and Misrepresentation of Staffing Data
+
+STATEMENT OF GRIEVANCE:
+
+The Nurses Union formally grieves that hospital management has violated Articles 7 (Hours of Work), 12 (Health and Safety), and 15 (Good Faith) of the current Collective Bargaining Agreement (CBA) through systematic understaffing, excessive mandatory overtime, and public misrepresentation of staffing adequacy.
+
+FACTUAL BASIS:
+
+1. OVERTIME DATA (sourced from payroll records obtained via FOIA request):
+Total overtime hours worked by nursing staff in Q1 2026: 14,847 hours. This represents a 94% increase from Q4 2025 (7,650 hours) and contradicts management's public claims that overtime has been "reduced." Mandatory overtime was invoked on 67% of night shifts during the quarter.
+
+2. OVERTIME PAY DISCREPANCY:
+Payroll records show $1,847,000 in overtime wages paid during Q1 2026. This DIRECTLY CONTRADICTS the Finance Department's claim of a $540,000 REDUCTION in overtime pay. The union's independent analysis suggests the Finance report may have incorrectly categorized overtime pay under different budget line items or excluded mandatory overtime from the "scheduled overtime" category being reported.
+
+3. AGENCY NURSE UTILIZATION:
+Despite HR's assertion that agency nurses were eliminated, payroll records show $287,000 in payments to three staffing agencies during Q1 2026: NurseFlex ($142,000), StaffBridge ($98,000), and MedTemp ($47,000). These payments were coded under "Contracted Services" rather than "Agency Nursing," obscuring the true expenditure.
+
+4. UNSAFE NURSE-TO-PATIENT RATIOS:
+Union shift reports document 43 instances of nurse-to-patient ratios exceeding safe limits during Q1 2026. On 12 occasions, ratios exceeded 1:8 on acute medical floors (safe limit: 1:5). These incidents correlate with the documented increase in patient falls and medication errors.
+
+RELIEF REQUESTED:
+1. Immediate hiring of 25 additional RN positions
+2. Restriction of mandatory overtime to genuine emergencies only
+3. Independent audit of staffing hours and overtime pay reporting
+4. $450,000 in retroactive hazard pay for nurses who worked unsafe shifts
+5. Corrective disclosure of accurate staffing and financial data to the hospital board
+
+Signed: Marcus Johnson, BSN, RN
+Union Representative, Nurses Union Local 1199

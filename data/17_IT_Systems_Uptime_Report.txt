@@ -1,0 +1,36 @@
+Metadata: {"department": "Information Technology", "date": "2026-03-31", "source_type": "report", "author": "Priya Sharma"}
+
+IT DEPARTMENT — Q1 2026 SYSTEMS UPTIME AND PERFORMANCE REPORT
+Author: Priya Sharma, CIO / VP of Information Technology
+Date: 2026-03-31
+
+SYSTEM AVAILABILITY:
+Overall IT systems uptime: 99.97% (target: 99.9%)
+- Electronic Health Record (Epic): 99.99% uptime, zero unplanned downtime
+- Laboratory Information System: 99.98% uptime
+- Pharmacy Dispensing System (Pyxis): 99.95% uptime
+- PACS (Medical Imaging): 99.96% uptime
+- Nurse Call System: 100% uptime
+- Building Management System: 99.94% uptime
+
+PLANNED MAINTENANCE WINDOWS:
+Three planned maintenance windows were executed during Q1 (all between 2:00-5:00 AM Sunday mornings):
+- January 12: Epic upgrade to February 2026 release (new sepsis screening alert)
+- February 9: Network infrastructure firmware updates (security patches)
+- March 9: PACS storage expansion (added 50TB for new MRI volume)
+
+CYBERSECURITY:
+- Phishing simulation tests conducted: 3 campaigns, 4,200 emails sent
+- Click rate: 4.2% (down from 8.7% in Q4 2025, industry average: 12%)
+- Zero successful ransomware or malware incidents
+- Multi-factor authentication deployment: 100% of clinical systems
+- Penetration test conducted by external firm (CrowdStrike): No critical vulnerabilities found
+
+HELP DESK PERFORMANCE:
+- Total tickets: 3,847
+- Average response time: 12 minutes (target: 15 minutes)
+- First-call resolution rate: 76%
+- User satisfaction score: 4.2/5.0
+
+Prepared by: Priya Sharma, MBA
+Chief Information Officer
