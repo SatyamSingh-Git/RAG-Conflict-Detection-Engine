@@ -6,11 +6,9 @@ pinecone
 langgraph
 langchain
 langchain-core
-langchain-huggingface
 langchain-openai
 langchain-text-splitters
-sentence-transformers
-pdfplumber
+google-generativeai
 PyPDF2
 fpdf
 requests
