@@ -9,45 +9,62 @@ An end-to-end Retrieval-Augmented Generation system that ingests heterogeneous h
 ## 🏗️ Architecture
 
 ```mermaid
-flowchart LR
-    subgraph Ingestion["📥 Ingestion Pipeline"]
-        FILES["PDF / TXT / MD\n(18 Documents)"] --> PARSE["Parser\n(PyPDF2 + Text)"]
-        PARSE --> CHUNK["Recursive\nChunker\n(500 chars)"]
-        CHUNK --> EMBED["BGE Embeddings\n(bge-small-en-v1.5)"]
-        EMBED --> UPSERT["Upsert\n(107 Vectors)"]
-    end
-
-    subgraph VectorDB["🗄️ Storage"]
-        UPSERT --> PINECONE[("Pinecone\nServerless\n(Cosine)")]
-        UPSERT --> BM25_IDX[("BM25 Index\n(In-Memory)")]
-    end
-
-    subgraph Query["🔍 Query Pipeline"]
-        USER["User Query"] --> API["FastAPI\n+ Rate Limiter"]
-        API --> HYBRID["Hybrid Search"]
-        HYBRID --> VECTOR_S["Pinecone\nSemantic Search"]
-        HYBRID --> BM25_S["BM25\nKeyword Search"]
-        VECTOR_S --> RRF["Reciprocal Rank\nFusion (RRF)"]
-        BM25_S --> RRF
-        RRF --> LANGGRAPH["LangGraph\nAgent"]
-        LANGGRAPH --> DEEPSEEK["DeepSeek LLM\n(Conflict Detection)"]
-        DEEPSEEK --> CONFIDENCE["Confidence\nCalibration\n(4-Factor)"]
-        CONFIDENCE --> RESPONSE["JSON Response\n+ Provenance"]
-    end
-
-    subgraph Frontend["🖥️ Frontend"]
-        RESPONSE --> NEXTJS["Next.js 14\n+ Tailwind CSS"]
-        NEXTJS --> UI_SYNTH["AI Synthesis\n+ Conflict Cards"]
-        NEXTJS --> UI_GAUGE["Confidence\nGauge (Expandable)"]
-        NEXTJS --> UI_SOURCES["Source\nProvenance"]
-        NEXTJS --> UI_ANALYTICS["Analytics\nDashboard"]
-    end
-
+flowchart TD
     subgraph Automation["⚙️ Automation"]
-        N8N["n8n Workflow"] -.->|"Watch Directory"| FILES
-        N8N -.->|"Trigger Ingest"| PARSE
+        N8N["n8n Workflow"]
     end
+
+    subgraph Ingestion["📥 Ingestion Pipeline"]
+        FILES["PDF / TXT / MD\n(18 Documents)"]
+        PARSE["Parser (PyPDF2 + Text)"]
+        CHUNK["Recursive Chunker (500 chars)"]
+        EMBED["BGE Embeddings (bge-small-en-v1.5)"]
+        FILES --> PARSE --> CHUNK --> EMBED
+    end
+
+    subgraph Storage["🗄️ Storage"]
+        PINECONE[("Pinecone Serverless\n(Cosine)")]
+        BM25_IDX[("BM25 Index\n(In-Memory)")]
+    end
+
+    EMBED --> PINECONE
+    EMBED --> BM25_IDX
+    N8N -.->|"Watch Directory"| FILES
+
+    subgraph QueryPipeline["🔍 Query Pipeline"]
+        USER["User Query"]
+        API["FastAPI + Rate Limiter"]
+        HYBRID["Hybrid Search"]
+        VECTOR_S["Pinecone Semantic Search"]
+        BM25_S["BM25 Keyword Search"]
+        RRF["Reciprocal Rank Fusion"]
+        LANGGRAPH["LangGraph Agent"]
+        DEEPSEEK["DeepSeek LLM\n(Conflict Detection)"]
+        CONFIDENCE["Confidence Calibration\n(4-Factor Weighted)"]
+        RESPONSE["JSON Response + Provenance"]
+
+        USER --> API --> HYBRID
+        HYBRID --> VECTOR_S --> RRF
+        HYBRID --> BM25_S --> RRF
+        RRF --> LANGGRAPH --> DEEPSEEK --> CONFIDENCE --> RESPONSE
+    end
+
+    PINECONE -.-> VECTOR_S
+    BM25_IDX -.-> BM25_S
+
+    subgraph Frontend["🖥️ Frontend (Next.js 14)"]
+        UI_SYNTH["AI Synthesis + Conflict Cards"]
+        UI_GAUGE["Confidence Gauge"]
+        UI_SOURCES["Source Provenance"]
+        UI_ANALYTICS["Analytics Dashboard"]
+    end
+
+    RESPONSE --> UI_SYNTH
+    RESPONSE --> UI_GAUGE
+    RESPONSE --> UI_SOURCES
+    RESPONSE --> UI_ANALYTICS
 ```
+
 
 ---
 
