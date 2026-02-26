@@ -177,6 +177,7 @@ export default function Home() {
   const [showFadeIn, setShowFadeIn] = useState(false);
   const [showDetailsModal, setShowDetailsModal] = useState(false);
   const [detailsLoading, setDetailsLoading] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [chunkExplanations, setChunkExplanations] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState<string>("Conflicts");
 
@@ -764,7 +765,7 @@ export default function Home() {
                 <p className="text-white/40 text-center py-12">No explanations available.</p>
               )}
 
-              {!detailsLoading && chunkExplanations.map((exp: any, i: number) => {
+              {!detailsLoading && chunkExplanations.map((exp, i: number) => {
                 const topChunks = response?.provenance
                   ? [...response.provenance].sort((a, b) => b.score - a.score).slice(0, 3)
                   : [];
