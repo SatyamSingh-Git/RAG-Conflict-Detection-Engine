@@ -2,7 +2,14 @@
 
 ### ▶ [**Try it live — rag-conflict-detection-engine.vercel.app**](https://rag-conflict-detection-engine.vercel.app)
 
-> **Note on the first search:** the backend sleeps when idle, so the **first query can take 1–2 minutes** to wake it up. Every search after that responds quickly. If the first one looks stuck, give it a minute rather than reloading.
+> [!IMPORTANT]
+> ## ⏳ The first search takes 1–2 minutes. This is normal.
+>
+> The backend **sleeps when idle**. Your first query has to wake it up, which can take **1–2 minutes**.
+> **Every search after that is fast.**
+>
+> ### ❌ Do not reload the page.
+> A refresh **restarts the wake-up** and makes it look broken. Send the query once, then wait it out.
 
 > **Option A** — RAG Robustness & Conflict Detection (Document QA)
 
