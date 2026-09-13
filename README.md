@@ -1,5 +1,9 @@
 # ⚡ Envint AI — RAG Conflict Detection Engine
 
+### ▶ [**Try it live — rag-conflict-detection-engine.vercel.app**](https://rag-conflict-detection-engine.vercel.app)
+
+> **Note on the first search:** the backend sleeps when idle, so the **first query can take 1–2 minutes** to wake it up. Every search after that responds quickly. If the first one looks stuck, give it a minute rather than reloading.
+
 > **Option A** — RAG Robustness & Conflict Detection (Document QA)
 
 An end-to-end Retrieval-Augmented Generation system that ingests heterogeneous hospital performance documents, detects conflicting claims across departments, and presents AI-synthesized answers with full provenance traceability.
